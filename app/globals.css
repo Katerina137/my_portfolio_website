@@ -22,14 +22,14 @@
   --c-accent: #a8546a;      /* rose: highlighted words, main button */
   --c-on-accent: #ffffff;
   --c-inverse: #ffffff;     /* text on dark (ink) buttons */
-  --c-pill: #e2e5cc;        /* olive */
-  --c-pill-ink: #4a5228;
+  --c-pill: #d5dcb6;        /* olive */
+  --c-pill-ink: #3c4719;
   --c-card-1: #f3e1de;
-  --c-card-2: #e3e7d0;
+  --c-card-2: #d8e0bf;
   --c-card-3: #ede3d1;
-  --c-live-bg: #e2e6cd;
-  --c-live-ink: #4a5228;
-  --c-live: #7a8a45;
+  --c-live-bg: #d5dcb6;
+  --c-live-ink: #3c4719;
+  --c-live: #5f7230;
   --c-term-bg: #2e2f25;
   --c-term-fg: #f3ede3;
   --c-term-dim: #a9a592;
@@ -41,7 +41,7 @@
 
   /* Project panel backgrounds (see data/projects.ts) */
   --tint-rose: #f1dedb;
-  --tint-olive: #e3e7d0;
+  --tint-olive: #d8e0bf;
   --tint-sand: #ede3d1;
   --tint-blush: #f6e7e2;
 }
