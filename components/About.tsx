@@ -1,5 +1,6 @@
 import { Reveal } from "./Reveal";
 import { Em, Eyebrow } from "./ui";
+import Image from "next/image";
 
 const details = [
   { label: "education", title: "Computer Science", sub: "Goldsmiths, University of London" },
@@ -19,9 +20,15 @@ export function About() {
           and add `import Image from "next/image";` at the top.
         */}
         <div className="flex aspect-[4/5] w-full items-center justify-center rounded-[20px] border border-dashed border-[#a9b0d6] bg-lavender font-mono text-[13px] text-ink-2">
-          [ YOUR PORTRAIT ]
+          <Image
+            src="/portrait.jpg"
+            alt="Katerina Matthaiou"
+            width={1200}
+            height={1500}
+            className="aspect-[4/5] w-full rounded-[20px] object-cover"
+          />
         </div>
-        <span className="font-mono text-xs text-muted">fig. b — katerina, london</span>
+        <span className="font-mono text-xs text-muted">fig. b — katerina matthaiou </span>
       </Reveal>
 
       <Reveal className="flex min-w-0 flex-[1_1_520px] flex-col gap-8" delay={0.1}>
