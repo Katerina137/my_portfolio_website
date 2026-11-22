@@ -1,3 +1,5 @@
+import { ThemeToggle } from "./ThemeToggle";
+
 export function Header() {
   return (
     <header className="wrap relative z-[5] flex flex-wrap items-center justify-between gap-4 py-7">
@@ -14,10 +16,11 @@ export function Header() {
         <a href="#about">03 about</a>
         <a
           href="#contact"
-          className="inline-flex min-h-11 items-center rounded-full bg-ink px-[18px] py-3 !text-white transition-transform duration-300 hover:-translate-y-0.5"
+          className="inline-flex min-h-11 items-center rounded-full bg-ink px-[18px] py-3 !text-inverse transition-transform duration-300 hover:-translate-y-0.5"
         >
           say hello →
         </a>
+        <ThemeToggle />
       </nav>
     </header>
   );

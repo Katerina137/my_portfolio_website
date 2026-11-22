@@ -9,7 +9,7 @@ import { Em } from "./ui";
 type Status = { kind: "idle" | "sending" | "ok" | "error"; text?: string };
 
 const fieldClass =
-  "min-h-11 rounded-none border-0 border-b border-term-line bg-transparent py-2.5 font-[inherit] text-white outline-none focus:border-term-prompt aria-[invalid=true]:border-[#f08a7e]";
+  "min-h-11 rounded-none border-0 border-b border-term-line bg-transparent py-2.5 font-[inherit] text-term-fg outline-none focus:border-term-prompt aria-[invalid=true]:border-error";
 
 export function Contact() {
   const [status, setStatus] = useState<Status>({ kind: "idle" });
@@ -55,7 +55,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="wrap pb-[clamp(72px,9vw,128px)]">
-      <Reveal className="flex flex-wrap gap-[clamp(40px,5vw,80px)] rounded-[28px] bg-lavender p-[clamp(32px,5vw,72px)]">
+      <Reveal className="flex flex-wrap gap-[clamp(40px,5vw,80px)] rounded-[28px] bg-soft p-[clamp(32px,5vw,72px)]">
         <div className="flex min-w-0 flex-[1_1_380px] flex-col gap-6">
           <span className="font-mono text-[13px] text-ink-2">04 — contact</span>
           <h2 className="h2-display text-[clamp(40px,5.4vw,80px)] leading-[0.98] tracking-[-0.045em]">
@@ -64,7 +64,7 @@ export function Contact() {
           <p className="m-0 max-w-[440px] text-[17px] leading-relaxed text-ink-2">
             Internships, collaborations or just a good idea - my inbox is open.
           </p>
-          <div className="mt-auto flex flex-col gap-3 font-mono text-sm [&_a]:self-start [&_a]:border-b [&_a]:border-[#c9cdd6] [&_a]:py-1 [&_a]:no-underline [&_a:hover]:border-accent">
+          <div className="mt-auto flex flex-col gap-3 font-mono text-sm [&_a]:self-start [&_a]:border-b [&_a]:border-line [&_a]:py-1 [&_a]:no-underline [&_a:hover]:border-accent">
             <a href={`mailto:${links.email}`}>email → {links.email}</a>
             <a href={links.github} target="_blank" rel="noopener noreferrer">
               github → Katerina137
@@ -78,9 +78,9 @@ export function Contact() {
         <form
           noValidate
           onSubmit={onSubmit}
-          className="flex min-w-0 flex-[1_1_460px] flex-col gap-[22px] rounded-[18px] bg-ink p-[clamp(24px,3vw,36px)] font-mono text-sm text-lavender"
+          className="flex min-w-0 flex-[1_1_460px] flex-col gap-[22px] rounded-[18px] bg-term-bg p-[clamp(24px,3vw,36px)] font-mono text-sm text-term-fg"
         >
-          <div className="flex items-center justify-between border-b border-[#2c3038] pb-4 text-xs text-term-dim">
+          <div className="flex items-center justify-between border-b border-term-line-soft pb-4 text-xs text-term-dim">
             <span>~/contact — zsh</span>
             <LondonTime />
           </div>
@@ -107,13 +107,13 @@ export function Contact() {
           <button
             type="submit"
             disabled={status.kind === "sending"}
-            className="min-h-12 cursor-pointer self-start rounded-full bg-lavender px-[22px] py-3.5 font-medium text-ink transition-transform duration-300 hover:-translate-y-0.5 disabled:cursor-wait disabled:opacity-60"
+            className="min-h-12 cursor-pointer self-start rounded-full bg-term-fg px-[22px] py-3.5 font-medium text-term-bg transition-transform duration-300 hover:-translate-y-0.5 disabled:cursor-wait disabled:opacity-60"
           >
             send ↵
           </button>
           <span
             aria-live="polite"
-            className={`min-h-[1em] text-[13px] ${status.kind === "error" ? "text-[#f08a7e]" : "text-term-dim"}`}
+            className={`min-h-[1em] text-[13px] ${status.kind === "error" ? "text-error" : "text-term-dim"}`}
           >
             {status.text}
           </span>

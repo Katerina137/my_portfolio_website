@@ -48,10 +48,10 @@ export function Hero() {
             products end to end. Caring about how they look, how they feel and how they hold up under pressure.
           </p>
           <div className="flex flex-wrap gap-3">
-            <a href="#work" className={`${buttonBase} bg-accent !text-white`}>
+            <a href="#work" className={`${buttonBase} bg-accent !text-on-accent`}>
               See selected work
             </a>
-            <a href="#contact" className={`${buttonBase} border border-line bg-white !text-ink`}>
+            <a href="#contact" className={`${buttonBase} border border-line bg-surface !text-ink`}>
               Get in touch
             </a>
           </div>
