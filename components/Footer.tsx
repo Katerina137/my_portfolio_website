@@ -35,7 +35,7 @@ export function Footer() {
         </div>
         <div
           aria-hidden="true"
-          className="font-display text-[clamp(80px,18vw,260px)] leading-[0.8] font-semibold tracking-[-0.06em]"
+          className="font-display text-[clamp(64px,9vw,140px)] leading-[0.85] font-semibold tracking-[-0.06em]"
         >
           katerina<span className="text-accent">.</span>
         </div>
