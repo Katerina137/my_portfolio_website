@@ -31,7 +31,7 @@ export function Hero() {
           <span className="inline-block size-2 animate-live rounded-full bg-live motion-reduce:animate-none" />
           final year · computer science
         </span>
-        <span>fig. a — portfolio, 2026</span>
+        <span>fig. a - portfolio, 2026</span>
       </motion.div>
 
       <motion.h1
@@ -45,7 +45,7 @@ export function Hero() {
         <div className="flex max-w-[560px] flex-[1_1_420px] flex-col gap-7">
           <p className="m-0 text-lg leading-relaxed text-ink-2">
             I’m Katerina, a Computer Science student at Goldsmiths, University of London. I build web and mobile
-            products end to end — and I care about how they look, how they feel, and how they hold up under pressure.
+            products end to end. Caring about how they look, how they feel and how they hold up under pressure.
           </p>
           <div className="flex flex-wrap gap-3">
             <a href="#work" className={`${buttonBase} bg-accent !text-white`}>

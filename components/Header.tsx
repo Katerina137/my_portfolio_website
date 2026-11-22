@@ -2,8 +2,8 @@ export function Header() {
   return (
     <header className="wrap relative z-[5] flex flex-wrap items-center justify-between gap-4 py-7">
       <a href="#top" className="flex items-baseline gap-2.5 text-ink no-underline">
-        <span className="font-display text-[22px] font-semibold tracking-[-0.03em]">katerina</span>
-        <span className="font-mono text-xs text-muted">/km</span>
+        <span className="font-display text-[22px] font-semibold tracking-[-0.03em]">Katerina Matthaiou</span>
+        <span className="font-mono text-xs text-muted">/KM</span>
       </a>
       <nav
         aria-label="Main"
