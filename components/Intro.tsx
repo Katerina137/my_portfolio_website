@@ -90,7 +90,7 @@ function Loader({ onDone }: { onDone: () => void }) {
       role="status"
       aria-live="polite"
       aria-label="Loading portfolio"
-      className="fixed inset-0 z-50 flex flex-col justify-between bg-lavender p-[clamp(24px,4vw,56px)] font-mono text-[13px] text-ink-2"
+      className="fixed inset-0 z-50 flex flex-col justify-between bg-intro p-[clamp(24px,4vw,56px)] font-mono text-[13px] text-ink-2"
       initial={{ y: 0 }}
       exit={{ y: "-100%" }}
       transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
@@ -133,7 +133,7 @@ function Loader({ onDone }: { onDone: () => void }) {
           </div>
           <span className="pb-3 font-serif text-[clamp(28px,3.4vw,48px)] italic">design &amp; engineering</span>
         </div>
-        <div className="h-0.5 w-full bg-[#c9cde8]">
+        <div className="h-0.5 w-full bg-intro-line">
           <motion.div className="h-0.5 bg-accent" style={{ width: barWidth }} />
         </div>
       </div>

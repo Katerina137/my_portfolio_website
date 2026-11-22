@@ -1,36 +1,133 @@
 @import "tailwindcss";
 
-/* Fonts come from next/font (see app/layout.tsx). */
+/* `dark:` utilities follow the toggle (data-theme on <html>), not just the OS setting. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ============ PALETTES ============
+   Light: blush pink, soft olive, beige.
+   Dark:  deep green, burgundy, beige.
+   Every colour used on the site lives here; components only use the Tailwind names below. */
+:root {
+  color-scheme: light;
+
+  --c-canvas: #fdfbf7;      /* page background (bright warm white) */
+  --c-surface: #ffffff;     /* raised areas: strip, project window, footer */
+  --c-ink: #2b2a22;         /* main text */
+  --c-ink-2: #4d4b40;       /* body text */
+  --c-muted: #6e6a5c;       /* labels */
+  --c-line: #ece6dc;
+  --c-line-soft: #f3efe8;
+  --c-soft: #f1dedb;        /* contact block (pink) */
+  --c-intro: #fcf1ef;       /* intro loader (very light pink) */
+  --c-intro-line: #f0dcd8;  /* intro progress bar track */
+  --c-tabbar: #f7f3ed;
+  --c-accent: #a8546a;      /* rose: highlighted words, main button */
+  --c-on-accent: #ffffff;
+  --c-inverse: #ffffff;     /* text on dark (ink) buttons */
+  --c-pill: #d5dcb6;        /* olive */
+  --c-pill-ink: #3c4719;
+  --c-card-1: #f3e1de;
+  --c-card-2: #d8e0bf;
+  --c-card-3: #ede3d1;
+  --c-live-bg: #d5dcb6;
+  --c-live-ink: #3c4719;
+  --c-live: #5f7230;
+  --c-term-bg: #2e2f25;
+  --c-term-fg: #f3ede3;
+  --c-term-dim: #a9a592;
+  --c-term-line: #4a4b3e;
+  --c-term-line-soft: #3b3c31;
+  --c-term-prompt: #e9b3ba;
+  --c-error: #f0928a;
+  --c-shadow: rgb(43 42 34 / 0.35);
+
+  /* Project panel backgrounds (see data/projects.ts) */
+  --tint-rose: #f1dedb;
+  --tint-olive: #d8e0bf;
+  --tint-sand: #ede3d1;
+  --tint-blush: #f6e7e2;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --c-canvas: #142019;      /* deep green */
+  --c-surface: #1a2920;
+  --c-ink: #efe6d4;         /* beige text */
+  --c-ink-2: #cfc5b2;
+  --c-muted: #a0988a;
+  --c-line: #2c3c32;
+  --c-line-soft: #24342a;
+  --c-soft: #3a1d25;        /* burgundy */
+  --c-intro: #3a1d25;
+  --c-intro-line: #4e2a33;
+  --c-tabbar: #17251d;
+  --c-accent: #d98c99;      /* light burgundy-rose, readable on green */
+  --c-on-accent: #22121a;
+  --c-inverse: #142019;
+  --c-pill: #3e1f28;
+  --c-pill-ink: #f0bfc7;
+  --c-card-1: #3a1e26;
+  --c-card-2: #1f352a;
+  --c-card-3: #2e2a20;
+  --c-live-bg: #1f3a2a;
+  --c-live-ink: #b5d3a2;
+  --c-live: #8dbf78;
+  --c-term-bg: #0e1712;
+  --c-term-fg: #efe6d4;
+  --c-term-dim: #8f998f;
+  --c-term-line: #2c3c32;
+  --c-term-line-soft: #213027;
+  --c-term-prompt: #d98c99;
+  --c-error: #f0928a;
+  --c-shadow: rgb(0 0 0 / 0.55);
+
+  --tint-rose: #3a1e26;
+  --tint-olive: #1f352a;
+  --tint-sand: #2e2a20;
+  --tint-blush: #331c22;
+}
+
+/* Fonts come from next/font (see app/layout.tsx). Colours map to the palette above. */
 @theme inline {
   --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-display: var(--font-space-grotesk), sans-serif;
   --font-serif: var(--font-instrument-serif), serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  --color-canvas: var(--c-canvas);
+  --color-surface: var(--c-surface);
+  --color-ink: var(--c-ink);
+  --color-ink-2: var(--c-ink-2);
+  --color-muted: var(--c-muted);
+  --color-line: var(--c-line);
+  --color-line-soft: var(--c-line-soft);
+  --color-soft: var(--c-soft);
+  --color-intro: var(--c-intro);
+  --color-intro-line: var(--c-intro-line);
+  --color-tabbar: var(--c-tabbar);
+  --color-accent: var(--c-accent);
+  --color-on-accent: var(--c-on-accent);
+  --color-inverse: var(--c-inverse);
+  --color-pill: var(--c-pill);
+  --color-pill-ink: var(--c-pill-ink);
+  --color-card-1: var(--c-card-1);
+  --color-card-2: var(--c-card-2);
+  --color-card-3: var(--c-card-3);
+  --color-live-bg: var(--c-live-bg);
+  --color-live-ink: var(--c-live-ink);
+  --color-live: var(--c-live);
+  --color-term-bg: var(--c-term-bg);
+  --color-term-fg: var(--c-term-fg);
+  --color-term-dim: var(--c-term-dim);
+  --color-term-line: var(--c-term-line);
+  --color-term-line-soft: var(--c-term-line-soft);
+  --color-term-prompt: var(--c-term-prompt);
+  --color-error: var(--c-error);
+  --color-shadow: var(--c-shadow);
 }
 
-/* Palette from the design canvas. Accent alternatives: #2F7D6B, #C2410C, #7C3AED */
 @theme {
-  --color-accent: #4b5bdb;
-  --color-ink: #15171c;
-  --color-ink-2: #3e4350;
-  --color-muted: #5b616e;
-  --color-canvas: #f5f6f8;
-  --color-line: #dadde3;
-  --color-line-soft: #e6e8ed;
-  --color-lavender: #e8ebfa;
-  --color-tabbar: #f0f2f7;
-  --color-pill: #e3e6ff;
-  --color-pill-ink: #2a3170;
-  --color-card-blue: #eef0fb;
-  --color-card-green: #e6f4ee;
-  --color-card-peach: #fbefe8;
-  --color-live-bg: #ddf3e8;
-  --color-live-ink: #135c3d;
-  --color-live: #1f8a5c;
-  --color-term-dim: #9aa0b4;
-  --color-term-line: #3a3f4a;
-  --color-term-prompt: #9ba8ff;
-
   --animate-marquee: marquee 38s linear infinite;
   --animate-blink: blink 1s steps(1) infinite;
   --animate-live: live 1.8s ease-out infinite;
@@ -44,8 +141,8 @@
     50%, 100% { opacity: 0; }
   }
   @keyframes live {
-    0% { box-shadow: 0 0 0 0 rgb(31 138 92 / 0.45); }
-    100% { box-shadow: 0 0 0 10px rgb(31 138 92 / 0); }
+    0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--c-live) 45%, transparent); }
+    100% { box-shadow: 0 0 0 10px transparent; }
   }
 }
 
@@ -70,16 +167,18 @@
 @layer base {
   html { scroll-behavior: smooth; }
   body {
-    background: var(--color-canvas);
-    color: var(--color-ink);
+    background: var(--c-canvas);
+    color: var(--c-ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
-  a { color: var(--color-ink); }
-  a:hover { color: var(--color-accent); }
-  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+  a { color: var(--c-ink); }
+  a:hover { color: var(--c-accent); }
+  :focus-visible { outline: 2px solid var(--c-accent); outline-offset: 3px; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
+    body { transition: none; }
   }
 }

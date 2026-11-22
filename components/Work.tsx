@@ -47,7 +47,7 @@ export function Work() {
         </Eyebrow>
       </Reveal>
 
-      <Reveal className="overflow-hidden rounded-[20px] border border-line bg-white">
+      <Reveal className="overflow-hidden rounded-[20px] border border-line bg-surface">
         <div
           role="tablist"
           aria-label="Projects"
@@ -70,7 +70,7 @@ export function Work() {
                 tabIndex={selected ? 0 : -1}
                 onClick={() => go(i)}
                 className={`relative min-h-11 flex-none cursor-pointer rounded-[10px] px-4 py-2.5 font-mono text-[13px] transition-colors duration-200 ${
-                  selected ? "text-white" : "text-ink-2 hover:bg-pill"
+                  selected ? "text-inverse" : "text-ink-2 hover:bg-pill"
                 }`}
               >
                 {selected && (
@@ -125,7 +125,7 @@ export function Work() {
                 type="button"
                 aria-label="Previous project"
                 onClick={() => go(active - 1)}
-                className="inline-flex size-12 cursor-pointer items-center justify-center rounded-full border border-line bg-white text-ink transition-transform duration-300 hover:-translate-y-0.5"
+                className="inline-flex size-12 cursor-pointer items-center justify-center rounded-full border border-line bg-surface text-ink transition-transform duration-300 hover:-translate-y-0.5"
               >
                 <Chevron d="M15 18l-6-6 6-6" />
               </button>
@@ -133,17 +133,16 @@ export function Work() {
                 type="button"
                 aria-label="Next project"
                 onClick={() => go(active + 1)}
-                className="inline-flex size-12 cursor-pointer items-center justify-center rounded-full bg-ink text-white transition-transform duration-300 hover:-translate-y-0.5"
+                className="inline-flex size-12 cursor-pointer items-center justify-center rounded-full bg-ink text-inverse transition-transform duration-300 hover:-translate-y-0.5"
               >
                 <Chevron d="M9 18l6-6-6-6" />
               </button>
             </div>
           </div>
 
-          <motion.div
-            className="flex min-w-0 flex-[1_1_460px] flex-col justify-center gap-4 p-[clamp(28px,4vw,56px)] font-mono text-xs text-ink-2 sm:min-h-[420px]"
-            animate={{ backgroundColor: current.tint }}
-            transition={{ duration: 0.4 }}
+          <div
+            className="flex min-w-0 flex-[1_1_460px] flex-col justify-center gap-4 p-[clamp(28px,4vw,56px)] font-mono text-xs text-ink-2 transition-colors duration-[400ms] sm:min-h-[420px]"
+            style={{ backgroundColor: `var(--tint-${current.tint})` }}
           >
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
@@ -154,7 +153,7 @@ export function Work() {
                 transition={{ duration: 0.3, ease }}
                 className="flex flex-col gap-4"
               >
-                <div className="overflow-hidden rounded-[14px] border border-ink/8 bg-white shadow-[0_30px_60px_-40px_rgba(21,23,28,.45)]">
+                <div className="overflow-hidden rounded-[14px] border border-ink/8 bg-surface shadow-[0_30px_60px_-40px_var(--c-shadow)]">
                   <div className="flex items-center justify-between border-b border-line-soft px-4 py-3 text-muted">
                     <span>~/projects/{current.file}</span>
                     <span>{current.lang}</span>
@@ -166,7 +165,7 @@ export function Work() {
                 <span>fig. {num} — excerpt, simplified</span>
               </motion.div>
             </AnimatePresence>
-          </motion.div>
+          </div>
         </div>
       </Reveal>
     </section>

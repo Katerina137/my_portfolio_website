@@ -13,22 +13,14 @@ export function About() {
   return (
     <section id="about" className="wrap section-y flex flex-wrap gap-[clamp(40px,6vw,96px)]">
       <Reveal className="m-0 flex min-w-0 flex-[0_1_420px] flex-col gap-3.5">
-        {/*
-          To add your photo: put it in /public (e.g. public/portrait.jpg), then replace the div below with:
-          <Image src="/portrait.jpg" alt="Katerina in London" width={840} height={1050} priority={false}
-                 className="aspect-[4/5] w-full rounded-[20px] object-cover" />
-          and add `import Image from "next/image";` at the top.
-        */}
-        <div className="flex aspect-[4/5] w-full items-center justify-center rounded-[20px] border border-dashed border-[#a9b0d6] bg-lavender font-mono text-[13px] text-ink-2">
-          <Image
-            src="/portrait.jpg"
-            alt="Katerina Matthaiou"
-            width={1200}
-            height={1500}
-            className="aspect-[4/5] w-full rounded-[20px] object-cover"
-          />
-        </div>
-        <span className="font-mono text-xs text-muted">fig. b — katerina matthaiou </span>
+        <Image
+          src="/portrait.jpg"
+          alt="Katerina Matthaiou"
+          width={1200}
+          height={1500}
+          className="aspect-[4/5] w-full rounded-[20px] bg-soft object-cover"
+        />
+        <span className="font-mono text-xs text-muted">fig. b — katerina matthaiou</span>
       </Reveal>
 
       <Reveal className="flex min-w-0 flex-[1_1_520px] flex-col gap-8" delay={0.1}>

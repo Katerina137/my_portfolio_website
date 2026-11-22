@@ -5,23 +5,23 @@ const habits = [
   {
     title: "Learn by building",
     body: "Every new idea gets a prototype. Right now that means machine learning — from small models to turning dance into art.",
-    bg: "bg-card-blue",
+    bg: "bg-card-1",
   },
   {
     title: "Design is part of the spec",
     body: "Motion, type and spacing get the same attention as the API. Something should feel as good as it works.",
-    bg: "bg-card-green",
+    bg: "bg-card-2",
   },
   {
     title: "Show the working",
     body: "Small, deliberate commits from first sketch to final polish. Progress you can read straight from the git log.",
-    bg: "bg-card-peach",
+    bg: "bg-card-3",
   },
 ];
 
 export function Approach() {
   return (
-    <section id="approach" className="border-y border-line bg-white">
+    <section id="approach" className="border-y border-line bg-surface">
       <div className="wrap section-y">
         <Reveal className="mb-14 flex flex-col gap-4">
           <Eyebrow>02 — approach</Eyebrow>
@@ -34,7 +34,7 @@ export function Approach() {
           {habits.map((h, i) => (
             <Reveal key={h.title} delay={i * 0.1}>
               <article
-                className={`${h.bg} flex h-full min-h-[340px] flex-col gap-14 rounded-[20px] p-8 text-ink-2 transition-[transform,box-shadow] duration-[350ms] ease-[cubic-bezier(.2,.7,.2,1)] hover:-translate-y-1 hover:shadow-[0_18px_40px_-24px_rgba(21,23,28,.35)]`}
+                className={`${h.bg} flex h-full min-h-[340px] flex-col gap-14 rounded-[20px] p-8 text-ink-2 transition-[transform,box-shadow] duration-[350ms] ease-[cubic-bezier(.2,.7,.2,1)] hover:-translate-y-1 hover:shadow-[0_18px_40px_-24px_var(--c-shadow)]`}
               >
                 <span className="font-mono text-xs">fig. {String(i + 1).padStart(2, "0")}</span>
                 <div className="mt-auto flex flex-col gap-3.5">

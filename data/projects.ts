@@ -8,8 +8,8 @@ export type Project = {
   role: string;
   stack: string[];
   lang: string;
-  /** Background colour behind the code window. */
-  tint: string;
+  /** Background behind the code window. Colours are defined per theme in app/globals.css (--tint-*). */
+  tint: "rose" | "olive" | "sand" | "blush";
   /** Short, simplified excerpt shown in the code window. */
   snippet: string;
 };
@@ -26,7 +26,7 @@ export const projects: Project[] = [
     role: "primary contributor — frontend, backend, docs",
     stack: ["JavaScript / JSX", "Flask", "Python"],
     lang: "py",
-    tint: "#E6F4EE",
+    tint: "olive",
     snippet: `@app.route("/quests", methods=["GET"])
 def list_quests():
     quests = Quest.query.filter_by(open=True)
@@ -43,7 +43,7 @@ def list_quests():
     role: "solo — design & engineering",
     stack: ["React", "Vite", "TypeScript", "Tailwind v4"],
     lang: "tsx",
-    tint: "#FBEFE8",
+    tint: "rose",
     snippet: `type Module =
   | "properties" | "bookings"
   | "calendar"   | "guests"
@@ -60,7 +60,7 @@ def list_quests():
     role: "solo — research & build",
     stack: ["computer vision", "pose estimation", "generative art"],
     lang: "py",
-    tint: "#F3ECFB",
+    tint: "blush",
     snippet: `for frame in stream:
     pose = estimator.track(frame)
     feeling = read_expression(pose)
@@ -75,7 +75,7 @@ def list_quests():
     role: "solo",
     stack: ["p5.js", "JavaScript"],
     lang: "js",
-    tint: "#FDF5DC",
+    tint: "sand",
     snippet: `function draw() {
   if (mouseIsPressed) {
     tool.stroke(pmouseX, pmouseY, mouseX, mouseY);

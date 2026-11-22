@@ -17,8 +17,8 @@ function Row({ hidden = false }: { hidden?: boolean }) {
 
 export function Marquee() {
   return (
-    <div className="group flex items-center overflow-hidden border-y border-line bg-white">
-      <div className="relative z-[1] flex-none border-r border-line bg-white px-[clamp(20px,3vw,32px)] py-[22px] font-mono text-[13px] text-muted">
+    <div className="group flex items-center overflow-hidden border-y border-line bg-surface">
+      <div className="relative z-[1] flex-none border-r border-line bg-surface px-[clamp(20px,3vw,32px)] py-[22px] font-mono text-[13px] text-muted">
         stack.ts
       </div>
       {/* Two copies so the -50% loop is seamless */}
