@@ -17,7 +17,9 @@
   --c-muted: #6e6a5c;       /* labels */
   --c-line: #ece6dc;
   --c-line-soft: #f3efe8;
-  --c-soft: #f1dedb;        /* loader, contact block (pink) */
+  --c-soft: #f1dedb;        /* contact block (pink) */
+  --c-intro: #fcf1ef;       /* intro loader (very light pink) */
+  --c-intro-line: #f0dcd8;  /* intro progress bar track */
   --c-tabbar: #f7f3ed;
   --c-accent: #a8546a;      /* rose: highlighted words, main button */
   --c-on-accent: #ffffff;
@@ -57,6 +59,8 @@
   --c-line: #2c3c32;
   --c-line-soft: #24342a;
   --c-soft: #3a1d25;        /* burgundy */
+  --c-intro: #3a1d25;
+  --c-intro-line: #4e2a33;
   --c-tabbar: #17251d;
   --c-accent: #d98c99;      /* light burgundy-rose, readable on green */
   --c-on-accent: #22121a;
@@ -99,6 +103,8 @@
   --color-line: var(--c-line);
   --color-line-soft: var(--c-line-soft);
   --color-soft: var(--c-soft);
+  --color-intro: var(--c-intro);
+  --color-intro-line: var(--c-intro-line);
   --color-tabbar: var(--c-tabbar);
   --color-accent: var(--c-accent);
   --color-on-accent: var(--c-on-accent);
